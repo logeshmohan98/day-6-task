@@ -1,0 +1,76 @@
+
+						DAY6
+
+1.https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+       this.title = title;
+       this.studio = studio;
+       this.rating = rating;
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+
+const missionimpossible = new Movie('missionimpossible', 'fox studio Productions', 'PG13');
+const vikram = new Movie('vikram', 'LCU', 'PG');
+const kaidhi = new Movie('karthi', 'Vijay', 'PG');
+const chorri = new Movie('chorri', 'EROS', 'PG13');
+const wakandaforever = new Movie('wakandaforever', 'MCU', 'PG');
+ 
+const moviesArray = [missionimpossible, vikram, kaidhi, chorri, wakandaforever];
+ 
+console.log(missionimpossible.getPG(moviesArray, 'R'));
+console.log(missionimpossible.getPG(moviesArray, 'PG'));
+
+
+3.Write a “person” class to hold all the details.
+
+
+class Person {
+  constructor(firstName, lastName, number, age, email) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.number=number;
+    this.age = age;
+    this.email = email;
+  }
+  
+  Name() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  
+  Age(Age) {
+    this.age = Age;
+  }
+}
+let person = new Person("loki", "M",9443537654, 24, "loki@gmail.com");
+console.log(person.Name()); 
+console.log()
+console.log(person.age); 
+console.log(person.number);
+console.log(person.email);
+
+
+4.write a class to calculate the uber price.
+
+class Uber {
+  constructor(baseamount, Rate, distance, tollfee) {
+    this.baseamount = baseamount;
+    this.Rate = Rate;
+    this.distance = distance;
+    this.tollfee = tollfee;
+  }
+  
+  calculatePrice(time, km) {
+    let price = this.baseamount + this.Rate * time + this.distance * km;
+    return price + this.tollfee;
+  }
+}
+let standardUber = new Uber(10, 4, 8, 20);
+let price = standardUber.calculatePrice(70, 170);
+console.log(price); 
